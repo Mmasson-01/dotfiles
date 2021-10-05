@@ -1,0 +1,7 @@
+[user]
+    email = maximemasson30@gmail.com
+    name = Maxime Masson
+[init]
+    defaultBranch = main
+[core]
+	editor = nano
