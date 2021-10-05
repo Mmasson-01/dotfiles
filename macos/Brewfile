@@ -9,34 +9,75 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
 tap "sass/sass"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+
+
+##################
+#### HASKELL #####
+##################
+# Glorious Glasgow Haskell Compilation System
+brew "ghc"
+# Integration point for ghcide and haskell-ide-engine. One IDE to rule them all
+brew "haskell-language-server"
+
+
+##################
+###### FUNNY #####
+##################
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Configurable talking characters in ASCII art
+brew "cowsay"
+# Rainbows and unicorns in your console!
+brew "lolcat"
+# Improved top (interactive process viewer)
+brew "htop"
+# Fast, highly customisable system info script
+brew "neofetch"
+
+
+##################
+### BLUETOOTH ####
+##################
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+
+
+##################
+###### DEVOPS ####
+##################
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Checks ansible playbooks for practices and behaviour
 brew "ansible-lint"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Get/set bluetooth power and discoverable state
-brew "blueutil"
+
+
+##################
+###### PHP #######
+##################
+# Dependency Manager for PHP
+brew "composer"
+# Apache HTTP server
+brew "httpd", restart_service: true
+# General-purpose scripting language
+brew "php", restart_service: true
+# Web interface for MySQL and MariaDB
+brew "phpmyadmin"
+
+
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Cross-platform make
 brew "cmake"
-# Dependency manager for Cocoa projects
-brew "cocoapods"
-# Dependency Manager for PHP
-brew "composer"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Configurable talking characters in ASCII art
-brew "cowsay"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Infamous electronic fortune-cookie generator
-brew "fortune"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # Interpreter for PostScript and PDF
@@ -49,14 +90,10 @@ brew "harfbuzz"
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
-# Improved top (interactive process viewer)
-brew "htop"
 # Platform built on V8 to build network applications
 brew "node"
 # Simple zero-configuration command-line HTTP server
 brew "http-server"
-# Apache HTTP server
-brew "httpd", restart_service: true
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Interpreted, interactive, object-oriented programming language
@@ -69,24 +106,16 @@ brew "jenv"
 brew "krb5"
 # Postgres C API library
 brew "libpq"
-# Rainbows and unicorns in your console!
-brew "lolcat"
 # Java-based project management
 brew "maven"
 # Open source relational database management system
 brew "mysql", restart_service: true
-# Fast, highly customisable system info script
-brew "neofetch"
 # Port scanning utility for large networks
 brew "nmap"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
-# General-purpose scripting language
-brew "php", restart_service: true
-# Web interface for MySQL and MariaDB
-brew "phpmyadmin"
 # Draw UML diagrams
 brew "plantuml"
 # Object-relational database system
@@ -115,11 +144,14 @@ brew "heroku/brew/heroku"
 brew "mongodb/brew/mongodb-community"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
+
+
+##################
+##### CASKS ######
+##################
 # Browser for SQLite databases
 cask "db-browser-for-sqlite"
 cask "font-fira-code"
-# GraphQL IDE for better development workflows
-cask "graphql-playground"
 cask "java"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
