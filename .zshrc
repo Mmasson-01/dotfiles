@@ -73,9 +73,6 @@ plugins=(
   bundler
   dotenv
   osx
-  rake
-  rbenv
-  ruby
   zsh-autosuggestions
   zsh-completions
 )

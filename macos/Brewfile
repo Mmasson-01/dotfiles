@@ -8,7 +8,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
-tap "sass/sass"
 
 
 ##################
@@ -31,6 +30,8 @@ brew "cowsay"
 brew "lolcat"
 # Improved top (interactive process viewer)
 brew "htop"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Fast, highly customisable system info script
 brew "neofetch"
 
@@ -51,89 +52,66 @@ brew "ansible"
 brew "ansible-lint"
 # Official Amazon AWS command-line interface
 brew "awscli"
-
-
-##################
-###### PHP #######
-##################
-# Dependency Manager for PHP
-brew "composer"
-# Apache HTTP server
-brew "httpd", restart_service: true
-# General-purpose scripting language
-brew "php", restart_service: true
-# Web interface for MySQL and MariaDB
-brew "phpmyadmin"
-
-
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-# Core application library for C
-brew "glib"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# Cross-platform make
-brew "cmake"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
-# Interpreter for PostScript and PDF
-brew "ghostscript"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Library to render SVG files using Cairo
-brew "librsvg"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
-# Platform built on V8 to build network applications
-brew "node"
-# Simple zero-configuration command-line HTTP server
-brew "http-server"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick"
-# Manage your Java environment
-brew "jenv"
-# Network authentication protocol
-brew "krb5"
-# Postgres C API library
-brew "libpq"
-# Java-based project management
-brew "maven"
-# Open source relational database management system
-brew "mysql", restart_service: true
 # Port scanning utility for large networks
 brew "nmap"
+# Internet file retriever
+brew "wget"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# HTTP regression testing and benchmarking utility
+brew "siege"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Draw UML diagrams
 brew "plantuml"
-# Object-relational database system
-brew "postgresql", restart_service: true
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
-# HTTP regression testing and benchmarking utility
-brew "siege"
-# Launcher to analyze a project with SonarQube
-brew "sonar-scanner"
+
+
+###################
+##### C / C++ #####
+###################
+# Core application library for C
+brew "glib"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Cross-platform make
+brew "cmake"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Postgres C API library
+brew "libpq"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Bundler for JavaScript and friends
-brew "webpack"
-# Internet file retriever
-brew "wget"
+
+
+###################
+###### PYTHON #####
+###################
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+
+
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+##################
+###### WEB #######
+##################
+# Platform built on V8 to build network applications
+brew "node"
 # JavaScript package manager
 brew "yarn"
+# Simple zero-configuration command-line HTTP server
+brew "http-server"
+
+
+##################
+##### OTHER ######
+##################
 # Nitro is a speedy Docker-based local development environment tuned for Craft CMS
 brew "craftcms/nitro/nitro"
 # Packer
@@ -142,8 +120,19 @@ brew "hashicorp/tap/packer"
 brew "heroku/brew/heroku"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
-# Stylesheet Preprocessor
-brew "sass/sass/sass"
+# Web interface for MySQL and MariaDB
+brew "phpmyadmin"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Network authentication protocol
+brew "krb5"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+
 
 
 ##################
@@ -152,6 +141,5 @@ brew "sass/sass/sass"
 # Browser for SQLite databases
 cask "db-browser-for-sqlite"
 cask "font-fira-code"
-cask "java"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
