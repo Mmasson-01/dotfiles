@@ -44,6 +44,10 @@ git clone https://github.com/ergenekonyigit/lambda-gitster
 cd lambda-gitster
 cp lambda-gitster.zsh-theme ~/.oh-my-zsh/custom/themes
 
+# Configure power10klevel
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+cp ../.p10k.zsh ~/.p10k.zsh
+
 # Install plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
