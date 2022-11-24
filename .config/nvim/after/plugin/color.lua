@@ -1,5 +1,9 @@
-vim.g.tokyonight_transparent_sidebar = true
-vim.g.tokyonight_transparent = true
-vim.opt.background = "dark"
-
-vim.cmd("colorscheme tokyonight")
+-- THEMES
+local ok_catpuccin, catppuccin = pcall(require, "catppuccin")
+if ok_catpuccin then
+    catppuccin.setup({ transparent_background = true })
+    vim.cmd("colorscheme catppuccin")
+    vim.g.catppuccinflavour = "mocha"
+end
+vim.g.glow_use_pager = true
+vim.g.glow_border = "shadow"
