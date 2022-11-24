@@ -22,8 +22,7 @@ packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     --use 'folke/tokyonight.nvim'
     use 'catppuccin/nvim'
-
-    -- Better mappings
+   -- Better mappings
     use("b0o/mapx.nvim")
     
     -- Multi Cursor
@@ -43,14 +42,15 @@ packer.startup(function(use)
         "hrsh7th/nvim-cmp", -- Completion engine
         "hrsh7th/cmp-nvim-lsp", -- LSP completion
         "saadparwaiz1/cmp_luasnip", -- Snippets cmp
+        "redhat-developer/yaml-language-server", -- Yaml LSP
     })
-    require("mmasson.lsp_setup")
+    require("lsp_setup")
 
     -- Custom linting
     use({
         "mfussenegger/nvim-lint",
         config = function()
-            require("mmasson.lint_setup")
+            require("lint_setup")
         end,
     })
 
@@ -58,7 +58,7 @@ packer.startup(function(use)
     use({
         "mhartington/formatter.nvim",
         config = function()
-            require("mmasson.formatter_setup")
+            require("formatter_setup")
         end,
     })
     
@@ -74,14 +74,14 @@ packer.startup(function(use)
     use({
         "windwp/nvim-autopairs",
         config = function()
-            require("mmasson.autopairs_setup")
+            require("autopairs_setup")
         end,
     })
     use({ "windwp/nvim-ts-autotag" })
     use({
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require("mmasson.treesitter_setup")
+            require("treesitter_setup")
         end,
     })
     
@@ -97,14 +97,32 @@ packer.startup(function(use)
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-telescope/telescope-project.nvim" },
     })
-    require("mmasson.telescope_setup")
+    require("telescope_setup")
 
 
     -- Status Bar
     use({
         "nvim-lualine/lualine.nvim",
         config = function()
-            require("mmasson.lualine_setup")
+            require("lualine_setup")
+        end,
+    })
+
+    -- LazyGit integration
+    use("kdheepak/lazygit.nvim")
+    -- Git signals
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns_setup")
+        end,
+    })
+
+    -- Terminal
+    use({
+        "numToStr/FTerm.nvim",
+        config = function()
+            require("fterm_setup")
         end,
     })
 
@@ -112,7 +130,7 @@ packer.startup(function(use)
     use({
         "laytan/cloak.nvim",
         config = function()
-            require("mmasson.cloak_setup")
+            require("cloak_setup")
         end,
     })
 
