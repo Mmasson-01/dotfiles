@@ -50,6 +50,10 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 --require'lspconfig'.terraformls.setup{}
 --require'lspconfig'.tflint.setup{}
 
+-- Coc OPTIONS
+--vim.g.coc_global_extensions = {"coc-emmet", "coc-css", "coc-html", "coc-json", "coc-prettier", "coc-tsserver"}
+vim.g.coc_global_extensions = {"coc-emmet"}
+
 local ok_m, m = pcall(require, "mapx")
 
 if ok_m then

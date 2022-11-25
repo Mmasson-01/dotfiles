@@ -10,6 +10,9 @@ formatter.setup({
     logging = true,
     log_level = vim.log.levels.WARN,
     filetype = {
+        yaml = {
+            require("formatter.filetypes.yaml").prettier
+        },
         svelte = {
             require("formatter.filetypes.svelte"),
         },

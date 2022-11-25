@@ -60,11 +60,13 @@ local server_with_disabled_formatting = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
     ["tailwindcss"] = true,
+    ["yamlls"] = true
 }
 
 local use_formatter = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
+    ["yamlls"] = true
 }
 
 mason.setup()

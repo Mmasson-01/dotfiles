@@ -54,6 +54,7 @@ packer.startup(function(use)
     })
     require("lsp_setup")
     use "hashivim/vim-terraform"
+    use {'neoclide/coc.nvim', branch = 'release'}
 
     -- Custom linting
     use({
@@ -108,7 +109,18 @@ packer.startup(function(use)
 
     -- Neoclip
     use({ "AckslD/nvim-neoclip.lua" })
+    -- Surround
+    use({
+        "ur4ltz/surround.nvim",
+        config = function()
+            require("surround_setup")
+        end,
+    })
+    -- Kitty Conf Highlighting
+    use("fladson/vim-kitty")
 
+    -- Auto indent detection
+    use("tpope/vim-sleuth")
     -- Indentation and blank lines indicators
     use({
         "lukas-reineke/indent-blankline.nvim",
@@ -120,7 +132,23 @@ packer.startup(function(use)
     -- LazyGit integration
     use("kdheepak/lazygit.nvim")
     
-   -- Git signals
+    
+        -- Auto Save
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function ()
+            require("autosave_setup")
+        end
+    })
+
+     -- Comment
+    use({
+        "numToStr/Comment.nvim",
+        config = function()
+            require("comment_setup")
+        end,
+    })
+    -- Git signals
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
