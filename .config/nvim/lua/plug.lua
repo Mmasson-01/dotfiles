@@ -6,7 +6,7 @@ Plug('neoclide/coc.nvim', {branch = 'release'})
 --Plug('scrooloose/nerdtree', {on = {'NERDTreeToggle', 'NERDTree'}})
 
 --Devops
-Plug 'pearofducks/ansible-vim'
+--Plug 'pearofducks/ansible-vim'
 
 --Web development
 --Plug('evanleck/vim-svelte', {branch = 'main'})
