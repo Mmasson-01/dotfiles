@@ -14,11 +14,11 @@
 
    - tpm
    - terraformls
-    ```
+    ```bash
     yay -S terraform-ls
     ```
    - tflint
-    ```
+    ```bash
     curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
     ```
 
@@ -30,3 +30,4 @@
 3. Copy the `nvim` directory into `~/.config/nvim
 4. Source `packer.lua` and run `:PackerInstall` & `:PackerSync`
 5. Source `plug.lua` and run `:PlugInstall` & `:PlugSync`
+6. Install Tree-sitter HCL with `:TSInstall hcl`
