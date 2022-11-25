@@ -20,21 +20,29 @@ packer.init({
 
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    --use 'folke/tokyonight.nvim'
+    -- Color & Theme
     use 'catppuccin/nvim'
+    use 'kyazdani42/nvim-web-devicons'
+
    -- Better mappings
     use("b0o/mapx.nvim")
     
+    -- Status Bar
+    use({
+        "nvim-lualine/lualine.nvim",
+        config = function()
+            require("lualine_setup")
+        end,
+    })
+
     -- Multi Cursor
     use {'mg979/vim-visual-multi', branch = 'master' }
-
 
     --Markdown preview
     use 'ellisonleao/glow.nvim'
 
-        -- Native LSP
+    -- Native LSP
     use({
-        "simrat39/rust-tools.nvim", -- Rust Custom LSP
         "L3MON4D3/LuaSnip", -- Snippets engine
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -45,6 +53,7 @@ packer.startup(function(use)
         "redhat-developer/yaml-language-server", -- Yaml LSP
     })
     require("lsp_setup")
+    use "hashivim/vim-terraform"
 
     -- Custom linting
     use({
@@ -61,14 +70,15 @@ packer.startup(function(use)
             require("formatter_setup")
         end,
     })
-    
-    --debugging
-    use 'nvim-telescope/telescope-dap.nvim'
 
-    
-    --Telescope Requirements
-    use 'nvim-lua/popup.nvim'
-    
+    -- Terminal
+    use({
+        "numToStr/FTerm.nvim",
+        config = function()
+            require("fterm_setup")
+        end,
+    })
+
     
     -- Treesitter
     use({
@@ -86,10 +96,6 @@ packer.startup(function(use)
     })
     
 
-    -- Neoclip
-    use({ "AckslD/nvim-neoclip.lua" })
-
-
     --Telescope
     use({
         { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
@@ -100,17 +106,21 @@ packer.startup(function(use)
     require("telescope_setup")
 
 
-    -- Status Bar
+    -- Neoclip
+    use({ "AckslD/nvim-neoclip.lua" })
+
+    -- Indentation and blank lines indicators
     use({
-        "nvim-lualine/lualine.nvim",
+        "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("lualine_setup")
+            require("indentblankline_setup")
         end,
     })
 
     -- LazyGit integration
     use("kdheepak/lazygit.nvim")
-    -- Git signals
+    
+   -- Git signals
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
@@ -118,14 +128,7 @@ packer.startup(function(use)
         end,
     })
 
-    -- Terminal
-    use({
-        "numToStr/FTerm.nvim",
-        config = function()
-            require("fterm_setup")
-        end,
-    })
-
+    
      -- Cloak
     use({
         "laytan/cloak.nvim",
@@ -134,8 +137,6 @@ packer.startup(function(use)
         end,
     })
 
-    --devicons
-    use 'kyazdani42/nvim-web-devicons'
-    use 'ryanoasis/vim-devicons'
+
 end)
 

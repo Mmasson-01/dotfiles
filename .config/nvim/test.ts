@@ -3,4 +3,4 @@ const object = {
   max: "Masson",
 };
 
-console.log(object.max);
+console.log(object.toto);

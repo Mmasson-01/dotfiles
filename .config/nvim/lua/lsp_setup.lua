@@ -38,7 +38,7 @@ local servers = {
     "dockerls",
     "tailwindcss",
     "taplo",
-    "astro",
+    "astro"
 }
 
 local server_settings = {

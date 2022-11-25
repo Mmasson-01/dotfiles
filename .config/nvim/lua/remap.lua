@@ -34,19 +34,3 @@ nnoremap("<leader>tp", ":!terraform plan<CR>")
 -- Glow
 nnoremap("<C-p>", "<cmd>Glow<CR>")
 
--- Terminal
-local au = require("au")
-tnoremap("<Esc>", "<C-\\><C-n>")
-au.BufEnter = {
-    '*',
-    function()
-        if vim.bo.buftype == 'terminal' then
-            vim.cmd(":startinsert")
-        end 
-    end
-
-}
-nnoremap("<leader>t", function()
-    vim.cmd("split term://zsh")
-    vim.cmd("resize 10")
-end)

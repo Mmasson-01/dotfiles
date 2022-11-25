@@ -15,10 +15,40 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.opt.guicursor = ""
+vim.opt.nu = true
+vim.opt.relativenumber = false
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+
+-- Custom Globals for plugins
+vim.g.terraform_fmt_on_save = 1
+vim.g.terraform_align = 1
+vim.g.fzf_action = {['ctrl-t'] = 'tab split', ['ctrl-s'] = 'split', ['ctrl-v'] = "vsplit"}
+vim.cmd("let $FZF_DEFAULT_COMMAND = 'ag -g \"\"'")
+
 require("plugins")
-require("set")
 require("remap")
-require("plug")
+
+-- Terraform LSP
+vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+require'lspconfig'.terraformls.setup{}
+require'lspconfig'.tflint.setup{}
 
 local ok_m, m = pcall(require, "mapx")
 

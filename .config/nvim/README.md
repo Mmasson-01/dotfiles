@@ -14,7 +14,13 @@
 
    - tpm
    - terraformls
+    ```
+    yay -S terraform-ls
+    ```
    - tflint
+    ```
+    curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+    ```
 
 2. Run in tmux the following to install the Tmux theme:
    **Note**: Ensure you have the .tmux.conf.
