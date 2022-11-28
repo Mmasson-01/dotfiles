@@ -13,20 +13,26 @@ local actions = require("telescope.actions")
 local fb_actions = telescope.extensions.file_browser.actions
 
 telescope.setup({
+    defaults = {
+        prompt_prefix = " ",
+        selection_caret = " ",
+        path_display = { "smart" },
+        file_ignore_patterns = {"^.git[/]"},
+    },
     pickers = {
-        find_files = {
-            find_command = {
-                "fd",
-                "--type",
-                "f",
-                "-H",
-                "-E",
-                "node_modules",
-                "-E",
-                ".git",
-                "-I",
-            },
-        },
+        -- find_files = {
+        --     find_command = {
+        --         "fd",
+        --         "--type",
+        --         "f",
+        --         "-H",
+        --         "-E",
+        --         "node_modules",
+        --         "-E",
+        --         ".git",
+        --         "-I",
+        --     },
+        -- },
     },
     extensions = {
         file_browser = {

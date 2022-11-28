@@ -4,8 +4,6 @@ local inoremap = require("keymap").inoremap
 local vnoremap = require("keymap").vnoremap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
-nnoremap("<C-b>", "<cmd>silent NERDTreeToggle<CR>")
-nnoremap("<leader>pf", "<cmd>CocCommand prettier.forceFormatDocument<CR>")
 inoremap("<C-c>", "<Esc>")
 
 --Navigate buffers

@@ -35,8 +35,6 @@ vim.opt.swapfile = false
 -- Custom Globals for plugins
 vim.g.terraform_fmt_on_save = 1
 vim.g.terraform_align = 1
-vim.g.fzf_action = {['ctrl-t'] = 'tab split', ['ctrl-s'] = 'split', ['ctrl-v'] = "vsplit"}
-vim.cmd("let $FZF_DEFAULT_COMMAND = 'ag -g \"\"'")
 
 vim.g.glow_use_pager = true
 vim.g.glow_border = "shadow"
