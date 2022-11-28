@@ -10,6 +10,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd("packadd packer.nvim")
+vim.cmd([[
+    augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+]])
 
 local packer = require("packer")
 local util = require("packer.util")
@@ -20,13 +26,12 @@ packer.init({
 
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    -- Color & Theme
-    use 'catppuccin/nvim'
-    use 'kyazdani42/nvim-web-devicons'
-
    -- Better mappings
     use("b0o/mapx.nvim")
-    
+     -- Color & Theme
+    use 'catppuccin/nvim'
+    use 'kyazdani42/nvim-web-devicons'
+   
     -- Status Bar
     use({
         "nvim-lualine/lualine.nvim",
@@ -34,9 +39,6 @@ packer.startup(function(use)
             require("lualine_setup")
         end,
     })
-
-    -- Multi Cursor
-    use {'mg979/vim-visual-multi', branch = 'master' }
 
     --Markdown preview
     use 'ellisonleao/glow.nvim'
@@ -79,9 +81,18 @@ packer.startup(function(use)
             require("fterm_setup")
         end,
     })
+    -- Multi Cursor
+    use {'mg979/vim-visual-multi', branch = 'master' }
+
 
     
     -- Treesitter
+     use({
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("treesitter_setup")
+        end,
+    })
     use({
         "windwp/nvim-autopairs",
         config = function()
@@ -89,13 +100,7 @@ packer.startup(function(use)
         end,
     })
     use({ "windwp/nvim-ts-autotag" })
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("treesitter_setup")
-        end,
-    })
-    
+   
 
     --Telescope
     use({
@@ -129,9 +134,10 @@ packer.startup(function(use)
         end,
     })
 
-    -- LazyGit integration
+    -- Git Integrations
     use("kdheepak/lazygit.nvim")
-    
+    use("f-person/git-blame.nvim")
+    require("blameline_setup")
     
         -- Auto Save
     use({

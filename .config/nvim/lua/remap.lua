@@ -1,6 +1,7 @@
 local nnoremap = require("keymap").nnoremap
 local tnoremap = require("keymap").tnoremap
 local inoremap = require("keymap").inoremap
+local vnoremap = require("keymap").vnoremap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 nnoremap("<C-b>", "<cmd>silent NERDTreeToggle<CR>")
@@ -23,6 +24,12 @@ nnoremap("<A-h>", "<C-w>h")
 nnoremap("<A-j>", "<C-w>j")
 nnoremap("<A-k>", "<C-w>k")
 nnoremap("<A-l>", "<C-w>l")
+
+-- Move text up and down
+nnoremap("<A-Up>", ":m .-2<CR>==")
+nnoremap("<A-Down>", ":m .+1<CR>==")
+vnoremap("<", "<gv")
+vnoremap(">", ">gv")
 
 nnoremap("ccd", ":CocList diagnostics<CR>")
 

@@ -24,8 +24,6 @@ telescope.setup({
                 "node_modules",
                 "-E",
                 ".git",
-                "-E",
-                ".env*",
                 "-I",
             },
         },
