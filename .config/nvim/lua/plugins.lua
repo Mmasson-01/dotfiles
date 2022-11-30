@@ -56,8 +56,6 @@ packer.startup(function(use)
     })
     require("lsp_setup")
     use "hashivim/vim-terraform"
-    use {'neoclide/coc.nvim', branch = 'release'}
-
     -- Custom linting
     use({
         "mfussenegger/nvim-lint",
