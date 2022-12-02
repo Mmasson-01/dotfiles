@@ -48,6 +48,7 @@ packer.startup(function(use)
         "L3MON4D3/LuaSnip", -- Snippets engine
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-buffer",
         "neovim/nvim-lspconfig", -- LSP config
         "hrsh7th/nvim-cmp", -- Completion engine
         "hrsh7th/cmp-nvim-lsp", -- LSP completion
@@ -90,6 +91,7 @@ packer.startup(function(use)
         config = function()
             require("treesitter_setup")
         end,
+        run = ":TSUpdate"
     })
     use({
         "windwp/nvim-autopairs",

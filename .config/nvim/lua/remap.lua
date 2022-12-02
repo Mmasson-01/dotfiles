@@ -2,9 +2,22 @@ local nnoremap = require("keymap").nnoremap
 local tnoremap = require("keymap").tnoremap
 local inoremap = require("keymap").inoremap
 local vnoremap = require("keymap").vnoremap
+local xnoremap = require("keymap").xnoremap
+local nmap = require("keymap").nmap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 inoremap("<C-c>", "<Esc>")
+
+-- greatest remap ever
+xnoremap("<leader>p", "\"_dP")
+
+-- next greatest remap ever : asbjornHaland
+nnoremap("<leader>y", "\"+y")
+vnoremap("<leader>y", "\"+y")
+nmap("<leader>Y", "\"+Y")
+nnoremap("<leader>d", "\"_d")
+vnoremap("<leader>d", "\"_d")
+vnoremap("<leader>d", "\"_d")
 
 --Navigate buffers
 nnoremap("<leader>bn", ":bnext<CR>")

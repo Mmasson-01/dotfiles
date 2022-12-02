@@ -89,6 +89,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
+    vim.keymap.set("n", "<leader>gsh", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
@@ -152,5 +153,6 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- For luasnip users
+        { name = "buffer" }
     }),
 })
