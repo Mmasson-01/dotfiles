@@ -18,6 +18,8 @@ nmap("<leader>Y", "\"+Y")
 nnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
 
 --Navigate buffers
 nnoremap("<leader>bn", ":bnext<CR>")
