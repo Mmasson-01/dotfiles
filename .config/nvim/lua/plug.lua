@@ -16,9 +16,3 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 vim.call('plug#end')
 
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeMinimalUI = 1
-vim.g.NERDTreeIgnore = {}
-vim.g.NERDTreeStatusline = '' 
-
-vim.g.coc_global_extensions = {"coc-emmet", "coc-css", "coc-html", "coc-json", "coc-prettier", "coc-tsserver"}

@@ -18,6 +18,8 @@ nmap("<leader>Y", "\"+Y")
 nnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
+
+-- Center when moving quick
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 

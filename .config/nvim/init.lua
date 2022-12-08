@@ -9,6 +9,10 @@ vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 
+-- Go LSP
+vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting()]])
+
+
 -- Coc OPTIONS
 --vim.g.coc_global_extensions = {"coc-emmet", "coc-css", "coc-html", "coc-json", "coc-prettier", "coc-tsserver"}
 -- vim.g.coc_global_extensions = {"coc-emmet"}

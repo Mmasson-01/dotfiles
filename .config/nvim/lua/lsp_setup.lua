@@ -43,7 +43,9 @@ local servers = {
     "tflint",
     "ansiblels",
     "emmet_ls",
-    "intelephense"
+    "intelephense",
+    "gopls",
+    "golangci_lint_ls"
 }
 
 local server_settings = {
@@ -88,13 +90,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set("n", "ga", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
-    vim.keymap.set("n", "<leader>gsh", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 
     if server_with_disabled_formatting[client.name] then
@@ -156,3 +158,4 @@ cmp.setup({
         { name = "buffer" }
     }),
 })
+
