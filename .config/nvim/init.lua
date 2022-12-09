@@ -13,6 +13,18 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting()]])
 
 
+-- BASH LSP
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    vim.lsp.start({
+      name = 'bash-language-server',
+      cmd = { 'bash-language-server', 'start' },
+    })
+  end,
+})
+
+
 -- Coc OPTIONS
 --vim.g.coc_global_extensions = {"coc-emmet", "coc-css", "coc-html", "coc-json", "coc-prettier", "coc-tsserver"}
 -- vim.g.coc_global_extensions = {"coc-emmet"}

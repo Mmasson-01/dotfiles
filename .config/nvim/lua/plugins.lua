@@ -40,9 +40,6 @@ packer.startup(function(use)
         end,
     })
 
-    --Markdown preview
-    use 'ellisonleao/glow.nvim'
-
     -- Native LSP
     use({
         "L3MON4D3/LuaSnip", -- Snippets engine
@@ -57,6 +54,7 @@ packer.startup(function(use)
     })
     require("lsp_setup")
     use "hashivim/vim-terraform"
+
     -- Custom linting
     use({
         "mfussenegger/nvim-lint",
@@ -80,10 +78,9 @@ packer.startup(function(use)
             require("fterm_setup")
         end,
     })
+
     -- Multi Cursor
     use {'mg979/vim-visual-multi', branch = 'master' }
-
-
     
     -- Treesitter
      use({
@@ -111,7 +108,6 @@ packer.startup(function(use)
     }) 
     require("telescope_setup")
 
-
     -- Neoclip
     use({ "AckslD/nvim-neoclip.lua" })
     -- Surround
@@ -121,12 +117,10 @@ packer.startup(function(use)
             require("surround_setup")
         end,
     })
-    -- Kitty Conf Highlighting
-    use("fladson/vim-kitty")
 
     -- Auto indent detection
-    use("tpope/vim-sleuth")
     -- Indentation and blank lines indicators
+    use("tpope/vim-sleuth")
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
@@ -136,8 +130,17 @@ packer.startup(function(use)
 
     -- Git Integrations
     use("kdheepak/lazygit.nvim")
-    use("f-person/git-blame.nvim")
-    require("blameline_setup")
+    use({ "f-person/git-blame.nvim", 
+        config = function ()
+            require("blameline_setup")
+        end
+    })
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns_setup")
+        end,
+    })
     
         -- Auto Save
     use({
@@ -154,14 +157,6 @@ packer.startup(function(use)
             require("comment_setup")
         end,
     })
-    -- Git signals
-    use({
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns_setup")
-        end,
-    })
-
     
      -- Cloak
     use({
@@ -170,7 +165,10 @@ packer.startup(function(use)
             require("cloak_setup")
         end,
     })
-
-
+    
+    -- Kitty Conf Highlighting
+    use("fladson/vim-kitty")
+    --Markdown preview
+    use 'ellisonleao/glow.nvim'
 end)
 

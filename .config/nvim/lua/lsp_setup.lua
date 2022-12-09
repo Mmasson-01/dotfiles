@@ -45,7 +45,8 @@ local servers = {
     "emmet_ls",
     "intelephense",
     "gopls",
-    "golangci_lint_ls"
+    "golangci_lint_ls",
+    "bashls"
 }
 
 local server_settings = {
