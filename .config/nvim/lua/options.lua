@@ -17,6 +17,7 @@ vim.opt.wrap = false
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.updatetime = 1000
 
 vim.opt.guicursor = ""
 vim.opt.nu = true

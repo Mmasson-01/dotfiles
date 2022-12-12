@@ -16,7 +16,6 @@ vim.cmd([[
       autocmd BufWritePost plugins.lua source <afile> | PackerSync
     augroup end
 ]])
-
 local packer = require("packer")
 local util = require("packer.util")
 
@@ -141,6 +140,7 @@ packer.startup(function(use)
             require("gitsigns_setup")
         end,
     })
+    use 'sindrets/diffview.nvim'
     
         -- Auto Save
     use({
@@ -170,5 +170,10 @@ packer.startup(function(use)
     use("fladson/vim-kitty")
     --Markdown preview
     use 'ellisonleao/glow.nvim'
+-- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 end)
 

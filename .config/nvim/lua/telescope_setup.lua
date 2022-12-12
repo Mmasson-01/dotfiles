@@ -66,3 +66,5 @@ m.noremap("<leader>fg", ":Telescope live_grep<CR>", "silent")
 m.noremap("<leader>pp", ":Telescope project<CR>", "silent")
 m.noremap("<leader>nc", ":Telescope neoclip<CR>", "silent")
 m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
+m.noremap("<C-f>", "<cmd>Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top<CR>")
+
