@@ -91,13 +91,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set("n", "ga", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+    vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", bufopts)
     vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
 
     if server_with_disabled_formatting[client.name] then
@@ -113,7 +113,7 @@ local on_attach = function(client, bufnr)
     vim.cmd([[
         augroup formatting
             autocmd! * <buffer>
-            " autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
             autocmd BufWritePre <buffer> lua OrganizeImports(1000)
         augroup END
     ]])
