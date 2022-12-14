@@ -27,7 +27,8 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<leader>bn", ":bnext<CR>")
 nnoremap("<leader>bp", ":bprevious<CR>")
 nnoremap("<leader>bf", ":bfirst<CR>")
-nnoremap("<leader>bl",":blast<CR>")
+nnoremap("<leader>bl", ":blast<CR>")
+nnoremap("<leader>bd", ":bdelete<CR>")
 
 -- Move between panels
 --use alt+hjkl to move between split/vsplit panels
