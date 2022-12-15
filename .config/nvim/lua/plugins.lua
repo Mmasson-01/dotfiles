@@ -24,8 +24,8 @@ packer.init({
 })
 
 packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
-   -- Better mappings
+    use("wbthomason/packer.nvim")
+    -- Better mappings
     use("b0o/mapx.nvim")
      -- Color & Theme
     use({ "catppuccin/nvim", as = "catppucin" })
@@ -52,7 +52,7 @@ packer.startup(function(use)
         "redhat-developer/yaml-language-server", -- Yaml LSP
     })
     require("lsp_setup")
-    use "hashivim/vim-terraform"
+    use("hashivim/vim-terraform")
 
     -- Custom linting
     use({
@@ -62,7 +62,7 @@ packer.startup(function(use)
         end,
     })
 
-     -- Format
+    -- Format
     use({
         "mhartington/formatter.nvim",
         config = function()
@@ -79,15 +79,15 @@ packer.startup(function(use)
     })
 
     -- Multi Cursor
-    use {'mg979/vim-visual-multi', branch = 'master' }
-    
+    use({ "mg979/vim-visual-multi", branch = "master" })
+
     -- Treesitter
-     use({
+    use({
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("treesitter_setup")
         end,
-        run = ":TSUpdate"
+        run = ":TSUpdate",
     })
     use({
         "windwp/nvim-autopairs",
@@ -96,7 +96,6 @@ packer.startup(function(use)
         end,
     })
     use({ "windwp/nvim-ts-autotag" })
-   
 
     --Telescope
     use({
@@ -104,7 +103,7 @@ packer.startup(function(use)
         { "nvim-telescope/telescope-file-browser.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-telescope/telescope-project.nvim" },
-    }) 
+    })
     require("telescope_setup")
 
     -- Neoclip
@@ -129,10 +128,11 @@ packer.startup(function(use)
 
     -- Git Integrations
     use("kdheepak/lazygit.nvim")
-    use({ "f-person/git-blame.nvim", 
-        config = function ()
+    use({
+        "f-person/git-blame.nvim",
+        config = function()
             require("blameline_setup")
-        end
+        end,
     })
     use({
         "lewis6991/gitsigns.nvim",
@@ -140,40 +140,47 @@ packer.startup(function(use)
             require("gitsigns_setup")
         end,
     })
-    use 'sindrets/diffview.nvim'
-    
-        -- Auto Save
     use({
-        "Pocco81/auto-save.nvim",
-        config = function ()
-            require("autosave_setup")
-        end
+        "sindrets/diffview.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("diffview_setup")
+        end,
     })
 
-     -- Comment
+    -- Auto Save
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+            require("autosave_setup")
+        end,
+    })
+
+    -- Comment
     use({
         "numToStr/Comment.nvim",
         config = function()
             require("comment_setup")
         end,
     })
-    
-     -- Cloak
+
+    -- Cloak
     use({
         "laytan/cloak.nvim",
         config = function()
             require("cloak_setup")
         end,
     })
-    
+
     -- Kitty Conf Highlighting
     use("fladson/vim-kitty")
     --Markdown preview
-    use 'ellisonleao/glow.nvim'
+    use("ellisonleao/glow.nvim")
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = function()
+            vim.fn["mkdp#util#install"]()
+        end,
     })
 end)
-
