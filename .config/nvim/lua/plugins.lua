@@ -28,7 +28,7 @@ packer.startup(function(use)
    -- Better mappings
     use("b0o/mapx.nvim")
      -- Color & Theme
-    use 'catppuccin/nvim'
+    use({ "catppuccin/nvim", as = "catppucin" })
     use 'kyazdani42/nvim-web-devicons'
    
     -- Status Bar
@@ -170,7 +170,7 @@ packer.startup(function(use)
     use("fladson/vim-kitty")
     --Markdown preview
     use 'ellisonleao/glow.nvim'
--- install without yarn or npm
+    -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,

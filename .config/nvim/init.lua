@@ -12,6 +12,13 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 -- Go LSP
 vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting()]])
 
+-- THEMES
+local ok_catpuccin, catppuccin = pcall(require, "catppuccin")
+if ok_catpuccin then
+    catppuccin.setup({ transparent_background = true })
+    vim.cmd("colorscheme catppuccin")
+    vim.g.catppuccinflavour = "macchiato"
+end
 
 -- BASH LSP
 vim.api.nvim_create_autocmd('FileType', {
@@ -24,10 +31,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-
--- Coc OPTIONS
---vim.g.coc_global_extensions = {"coc-emmet", "coc-css", "coc-html", "coc-json", "coc-prettier", "coc-tsserver"}
--- vim.g.coc_global_extensions = {"coc-emmet"}
 
 local ok_m, m = pcall(require, "mapx")
 
