@@ -1,127 +1,71 @@
-tap "craftcms/nitro"
 tap "dart-lang/dart"
 tap "hashicorp/tap"
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "mongodb/brew"
 
 
 ##################
 #### HASKELL #####
 ##################
 # Glorious Glasgow Haskell Compilation System
-brew "ghc"
+#brew "ghc"
 # Integration point for ghcide and haskell-ide-engine. One IDE to rule them all
-brew "haskell-language-server"
+#brew "haskell-language-server"
 
 
 ##################
 ###### FUNNY #####
 ##################
-# Infamous electronic fortune-cookie generator
 brew "fortune"
-# Configurable talking characters in ASCII art
 brew "cowsay"
-# Rainbows and unicorns in your console!
 brew "lolcat"
-# Improved top (interactive process viewer)
 brew "htop"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Fast, highly customisable system info script
 brew "neofetch"
-
-
-##################
-### BLUETOOTH ####
-##################
-# Get/set bluetooth power and discoverable state
-brew "blueutil"
 
 
 ##################
 ###### DEVOPS ####
 ##################
-# Automate deployment, configuration, and upgrading
 brew "ansible"
-# Checks ansible playbooks for practices and behaviour
 brew "ansible-lint"
-# Official Amazon AWS command-line interface
 brew "awscli"
-# Port scanning utility for large networks
 brew "nmap"
-# Internet file retriever
 brew "wget"
-# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# HTTP regression testing and benchmarking utility
 brew "siege"
-# Swiss-army knife of markup format conversion
 brew "pandoc"
-# Highly capable, feature-rich programming language
 brew "perl"
-# Draw UML diagrams
 brew "plantuml"
-# Powerful, clean, object-oriented scripting language
 brew "ruby"
-
-
-###################
-##### C / C++ #####
-###################
-# Core application library for C
-brew "glib"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# Cross-platform make
 brew "cmake"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Postgres C API library
+brew "librsvg"
+brew "graphviz"
+brew "libfido2"
 brew "libpq"
-# Rich and complete approach to parallelism in C++
-brew "tbb"
+brew "libraw"
+brew "libsndfile"
+brew "libssh"
+brew "openssl@3"
+brew "blueutil"
+brew "coreutils"
+brew "nvm"
+brew "tfenv"
+brew "tflint"
 
 
 ###################
 ###### PYTHON #####
 ###################
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-
-
-# Library to render SVG files using Cairo
-brew "librsvg"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
-##################
-###### WEB #######
-##################
-# Platform built on V8 to build network applications
-brew "node"
-# JavaScript package manager
-brew "yarn"
-# Simple zero-configuration command-line HTTP server
-brew "http-server"
+#brew "python@3.9"
 
 
 ##################
 ##### OTHER ######
 ##################
-# Nitro is a speedy Docker-based local development environment tuned for Craft CMS
-brew "craftcms/nitro/nitro"
-# Packer
-brew "hashicorp/tap/packer"
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
-# High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community"
-# Web interface for MySQL and MariaDB
-brew "phpmyadmin"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Network authentication protocol
@@ -134,12 +78,20 @@ brew "ghostscript"
 brew "gobject-introspection"
 
 
+##################
+##### NVIM #######
+##################
+brew "fd"
+brew "fzf"
+brew "ripgrep"
+brew "fmt"
+brew "kitty"
+brew "lazygit"
+
 
 ##################
 ##### CASKS ######
 ##################
-# Browser for SQLite databases
 cask "db-browser-for-sqlite"
 cask "font-fira-code"
-# Full TeX Live distribution with GUI applications
 cask "mactex"

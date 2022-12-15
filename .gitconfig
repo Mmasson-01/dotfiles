@@ -4,6 +4,7 @@
 [init]
     defaultBranch = main
 [core]
-	editor = nano
+    editor = vim
+    excludesFile = ~/.gitignore
 [pull]
-	rebase = false
+    rebase = false
