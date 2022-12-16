@@ -51,7 +51,6 @@ packer.startup(function(use)
         "saadparwaiz1/cmp_luasnip", -- Snippets cmp
         "rafamadriz/friendly-snippets" -- Vscode like snippets
     })
-    require("lsp_setup")
     use("hashivim/vim-terraform")
 
     -- Custom linting
@@ -84,9 +83,6 @@ packer.startup(function(use)
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("treesitter_setup")
-        end,
         run = ":TSUpdate",
     })
     use({
@@ -104,7 +100,6 @@ packer.startup(function(use)
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
         { "nvim-telescope/telescope-project.nvim" },
     })
-    require("telescope_setup")
 
     -- Neoclip
     use({ "AckslD/nvim-neoclip.lua" })
@@ -174,8 +169,6 @@ packer.startup(function(use)
 
     -- Kitty Conf Highlighting
     use("fladson/vim-kitty")
-    --Markdown preview
-    use("ellisonleao/glow.nvim")
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",

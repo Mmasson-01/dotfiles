@@ -1,7 +1,6 @@
 -- INIT PLUGINS FIRST
 vim.g.mapleader = " "
--- This makes all clipboard under the same. OS clipboard is accessible with P
--- and vice-versa
+-- This makes all clipboard under the same. OS clipboard is accessible with P and vice-versa
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 -- OPTIONS
@@ -18,6 +17,8 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.updatetime = 1000
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
 
 vim.opt.guicursor = ""
 vim.opt.nu = true
@@ -27,19 +28,13 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
 
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
-
--- Custom Globals for plugins
-vim.g.terraform_fmt_on_save = 1
-vim.g.terraform_align = 1
-
-vim.g.glow_use_pager = true
-vim.g.glow_border = "shadow"
 

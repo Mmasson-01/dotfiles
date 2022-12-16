@@ -32,6 +32,7 @@ local servers = {
     "cssls",
     "jsonls",
     "emmet_ls",
+    "eslint",
     "svelte",
     "astro",
     "tsserver",
@@ -99,7 +100,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 
     if server_with_disabled_formatting[client.name] then
         client.server_capabilities.documentFormattingProvider = false

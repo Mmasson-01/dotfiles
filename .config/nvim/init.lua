@@ -1,36 +1,4 @@
-require("options")
-require("plugins")
-require("remap")
-
--- Terraform LSP
-vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
-vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
-
--- Go LSP
-vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting()]])
-
--- THEMES
-local ok_catpuccin, catppuccin = pcall(require, "catppuccin")
-if ok_catpuccin then
-    catppuccin.setup({ transparent_background = true })
-    vim.cmd("colorscheme catppuccin")
-    vim.g.catppuccinflavour = "macchiato"
-end
-
--- BASH LSP
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'sh',
-  callback = function()
-    vim.lsp.start({
-      name = 'bash-language-server',
-      cmd = { 'bash-language-server', 'start' },
-    })
-  end,
-})
-
+require("ronmasson")
 
 local ok_m, m = pcall(require, "mapx")
 
