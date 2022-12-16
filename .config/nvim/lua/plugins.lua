@@ -49,7 +49,7 @@ packer.startup(function(use)
         "hrsh7th/nvim-cmp", -- Completion engine
         "hrsh7th/cmp-nvim-lsp", -- LSP completion
         "saadparwaiz1/cmp_luasnip", -- Snippets cmp
-        "redhat-developer/yaml-language-server", -- Yaml LSP
+        "rafamadriz/friendly-snippets" -- Vscode like snippets
     })
     require("lsp_setup")
     use("hashivim/vim-terraform")

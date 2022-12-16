@@ -15,6 +15,7 @@ if not ready then
     end
 end
 
+require("luasnip.loaders.from_vscode").lazy_load()
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 for type, icon in pairs(signs) do
@@ -39,7 +40,7 @@ local servers = {
     "tflint",
     "yamlls",
     "ansiblels",
-    "intelephense",
+    "phpactor",
     "gopls",
     "golangci_lint_ls",
     "dockerls",
