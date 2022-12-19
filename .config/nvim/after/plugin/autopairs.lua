@@ -5,8 +5,8 @@ if not ok then
 end
 
 autopairs.setup(
-    { 
-        disable_filetype = { "TelescopePrompt" }, 
+    {
+        disable_filetype = { "TelescopePrompt" },
         map_cr = true,
         fastwrapt = {}
     }
