@@ -1,6 +1,6 @@
 local ok_m, m = pcall(require, "mapx")
 local ok_telescope, telescope = pcall(require, "telescope")
-
+local builtin = require("telescope.builtin")
 local ready = ok_m and ok_telescope
 
 if not ready then
@@ -67,4 +67,5 @@ m.noremap("<leader>pp", ":Telescope project<CR>", "silent")
 m.noremap("<leader>nc", ":Telescope neoclip<CR>", "silent")
 m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
 m.noremap("<C-f>", ":Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top word_match='-w'<CR>", "silent")
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 

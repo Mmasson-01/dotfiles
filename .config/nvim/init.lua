@@ -2,6 +2,7 @@ require("ronmasson")
 
 local ok_m, m = pcall(require, "mapx")
 
+
 if ok_m then
     m.noremap("<up>", "<nop>", "silent")
     m.noremap("<down>", "<nop>", "silent")

@@ -13,7 +13,7 @@ vim.cmd("packadd packer.nvim")
 vim.cmd([[
     augroup packer_user_config
       autocmd!
-      autocmd BufWritePost plugins.lua source <afile> | PackerSync
+      autocmd BufWritePost packer.lua source <afile> | PackerSync
     augroup end
 ]])
 local packer = require("packer")
@@ -30,6 +30,7 @@ packer.startup(function(use)
     use("catppuccin/nvim")
     use("kyazdani42/nvim-web-devicons")
     use("nvim-lualine/lualine.nvim")
+    use('theprimeagen/harpoon')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     --Telescope
@@ -63,6 +64,8 @@ packer.startup(function(use)
         }
     }
 
+    use("mhartington/formatter.nvim")
+    use("mfussenegger/nvim-lint")
 
     use("numToStr/FTerm.nvim")
     use("numToStr/Comment.nvim")
