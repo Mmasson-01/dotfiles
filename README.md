@@ -40,15 +40,8 @@ brew bundle --file ~/.dotfiles/Brewfile
 ```bash
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Configure lambda gitster theme
-git clone https://github.com/ergenekonyigit/lambda-gitster
-cd lambda-gitster
-cp lambda-gitster.zsh-theme ~/.oh-my-zsh/custom/themes
-
 # Configure power10klevel
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 # Install plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -67,7 +60,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 7. Install other Brew packages (and tap)
 ```bash
-brew install htop fd ripgrep jq lolcat go lazygit kitty spotify discord neovim
+brew install htop fd ripgrep jq lolcat go lazygit kitty spotify discord neovim shellcheck
 brew install caarlos0/tap/timer
 ```
 
