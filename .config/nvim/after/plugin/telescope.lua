@@ -36,7 +36,7 @@ telescope.setup({
     extensions = {
         file_browser = {
             hidden = true,
-            respect_gitignore = true,
+            respect_gitignore = false,
             hijack_netrw = true,
             mappings = {
                 ["i"] = {
