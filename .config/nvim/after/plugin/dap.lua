@@ -1,4 +1,5 @@
-local ok_dap, dapui = pcall(require, "dapui")
+local ok_dap, dap = pcall(require, "dap")
+local ok_dapui, dapui = pcall(require, "dapui")
 local ok_dapvirtual, dapvirtual = pcall(require, "nvim-dap-virtual-text")
 -- Debugging
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>" )
@@ -12,7 +13,7 @@ vim.keymap.set("n", "<leader>dt",":lua require'dap'.debug_text()<CR>" )
 vim.keymap.set("n", "<leader>do",":lua require'dapui'.open()<CR>" )
 vim.keymap.set("n", "<leader>dc",":lua require'dapui'.close()<CR>" )
 
-local ready = ok_dap and ok_dapvirtual
+local ready = ok_dapui and ok_dapvirtual and ok_dap
 if not ready then
     do
         return
@@ -21,3 +22,13 @@ end
 
 dapui.setup()
 dapvirtual.setup({})
+
+dap.listeners.after.event_initialized["dapui_config"] = function ()
+    dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function ()
+    dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function ()
+    dapui.close()
+end
