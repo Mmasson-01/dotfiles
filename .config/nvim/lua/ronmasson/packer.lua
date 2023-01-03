@@ -85,6 +85,7 @@ packer.startup(function(use)
     use("ur4ltz/surround.nvim")
     use("windwp/nvim-autopairs") -- install without yarn or npm
     use({ "windwp/nvim-ts-autotag" })
+    use({"folke/todo-comments.nvim"})
     use({
         "iamcco/markdown-preview.nvim",
         run = function()

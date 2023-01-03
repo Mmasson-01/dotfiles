@@ -47,7 +47,8 @@ local servers = {
     "pyright",
     "taplo",
     "sumneko_lua",
-    "bashls"
+    "bashls",
+    "phpactor"
 }
 
 local server_settings = {
