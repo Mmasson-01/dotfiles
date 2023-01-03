@@ -54,3 +54,4 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ti", ":!terraform init<CR>")
 vim.keymap.set("n", "<leader>tv", ":!terraform validate<CR>")
 vim.keymap.set("n", "<leader>tp", ":!terraform plan<CR>")
+

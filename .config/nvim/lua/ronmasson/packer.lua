@@ -61,6 +61,11 @@ packer.startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+
+            -- Debugging
+            { 'mfussenegger/nvim-dap'},
+            { 'rcarriga/nvim-dap-ui'},
+            { 'theHamsta/nvim-dap-virtual-text'}
         }
     }
 
