@@ -1,5 +1,6 @@
 -- INIT PLUGINS FIRST
 vim.g.mapleader = " "
+
 -- This makes all clipboard under the same. OS clipboard is accessible with P and vice-versa
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
