@@ -8,18 +8,15 @@ xcode-select --install
 
 2. Clone repo into new hidden directory.
 
-```
-# Use SSH if set up...
+```bash
 git clone git@gitlab.com:Nap0leon/dotfiles.git ~/.dotfiles
-
-# ... or use HTTPS and switch remotes later.
-git clone https://gitlab.com/Nap0leon/dotfiles.git ~/.dotfiles
 ```
 
 3. Create symlinks in the Home directory to the real files in the repo.
 
 ```bash
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/.dotfiles/.config/kitty ~/.config/kitty
@@ -30,7 +27,6 @@ ln -s ~/.dotfiles/.config/kitty ~/.config/kitty
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Bundle Brewfile
 brew bundle --file ~/.dotfiles/Brewfile
 ```
@@ -60,7 +56,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 7. Install other Brew packages (and tap)
 ```bash
-brew install htop fd ripgrep jq lolcat go lazygit kitty spotify discord neovim shellcheck
+brew install htop fd ripgrep jq lolcat go lazygit kitty spotify discord neovim shellcheck tmux
 brew install caarlos0/tap/timer
 ```
 
