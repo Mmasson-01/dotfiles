@@ -20,6 +20,7 @@ vim.opt.splitright = true
 vim.opt.updatetime = 1000
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
+vim.opt.wildignore:append { '*/node_modules/*' }
 
 vim.opt.guicursor = ""
 vim.opt.nu = true
