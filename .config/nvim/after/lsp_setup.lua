@@ -41,14 +41,14 @@ local servers = {
     "tflint",
     "yamlls",
     "ansiblels",
-    "phpactor",
     "gopls",
     "golangci_lint_ls",
     "dockerls",
     "pyright",
     "taplo",
     "sumneko_lua",
-    "bashls"
+    "bashls",
+    "phpactor"
 }
 
 local server_settings = {
@@ -67,13 +67,15 @@ local server_with_disabled_formatting = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
     ["tailwindcss"] = true,
-    ["yamlls"] = true
+    ["yamlls"] = true,
+    ["phpactor"] = true
 }
 
 local use_formatter = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
-    ["yamlls"] = true
+    ["yamlls"] = true,
+    ["phpactor"] = true
 }
 
 mason.setup()
@@ -88,19 +90,19 @@ capabilities = cmp_lsp.default_capabilities(capabilities)
 local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", bufopts)
-    vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
-    vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, bufopts)
+    vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, bufopts)
+    vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, bufopts)
+    vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, bufopts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, bufopts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, bufopts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, bufopts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, bufopts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, bufopts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, bufopts)
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, bufopts)
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, bufopts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, bufopts)
 
     if server_with_disabled_formatting[client.name] then
         client.server_capabilities.documentFormattingProvider = false
@@ -112,13 +114,6 @@ local on_attach = function(client, bufnr)
     else
         vim.keymap.set("n", "<leader>F", ":lua vim.lsp.buf.format({ async = true })<CR>", bufopts)
     end
-    vim.cmd([[
-        augroup formatting
-            autocmd! * <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
-            autocmd BufWritePre <buffer> lua OrganizeImports(1000)
-        augroup END
-    ]])
 end
 
 for _, server in pairs(servers) do

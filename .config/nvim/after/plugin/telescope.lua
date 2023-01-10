@@ -19,19 +19,19 @@ telescope.setup({
         file_ignore_patterns = {"^.git[/]", "node_modules", "vendor", ".lock"},
     },
     pickers = {
-        -- find_files = {
-        --     find_command = {
-        --         "fd",
-        --         "--type",
-        --         "f",
-        --         "-H",
-        --         "-E",
-        --         "node_modules",
-        --         "-E",
-        --         ".git",
-        --         "-I",
-        --     },
-        -- },
+      --   find_command = {
+      --   "fd",
+      --   "--type",
+      --   "f",
+      --   "-H",
+      --   "-E",
+      --   "node_modules",
+      --   "-E",
+      --   ".git",
+      --   "-E",
+      --   ".venv",
+      --   "-I",
+      -- }
     },
     extensions = {
         file_browser = {
@@ -59,14 +59,14 @@ telescope.load_extension("fzf")
 telescope.load_extension("project")
 telescope.load_extension("neoclip")
 
-m.noremap("<leader>fd", ":Telescope file_browser<CR>")
 m.noremap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "silent")
 m.noremap("<leader>ff", ":Telescope find_files<CR>", "silent")
 m.noremap("<leader>fg", ":Telescope live_grep<CR>", "silent")
+m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
 m.noremap("<leader>fsg", ":Telescope grep_string<CR>", "silent")
 m.noremap("<leader>pp", ":Telescope project<CR>", "silent")
 m.noremap("<leader>nc", ":Telescope neoclip<CR>", "silent")
-m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
 m.noremap("<C-f>", ":Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top word_match='-w'<CR>", "silent")
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 

@@ -16,14 +16,14 @@ lsp.ensure_installed({
     "tflint",
     "yamlls",
     "ansiblels",
-    "phpactor",
     "gopls",
     "golangci_lint_ls",
     "dockerls",
     "pyright",
     "taplo",
     "sumneko_lua",
-    "bashls"
+    "bashls",
+    "phpactor"
 })
 
 
@@ -35,13 +35,15 @@ local server_with_disabled_formatting = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
     ["tailwindcss"] = true,
-    ["yamlls"] = true
+    ["yamlls"] = true,
+    ["phpactor"] = true
 }
 
 local use_formatter = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
-    ["yamlls"] = true
+    ["yamlls"] = true,
+    ["phpactor"] = true
 }
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -51,11 +53,17 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
-
+lsp.set_preferences({
+    sign_icons = {
+        error = " ",
+        warn = " ",
+        hint = " ",
+        info = " "
+    }
+})
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings
 })
-
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
@@ -78,18 +86,13 @@ lsp.on_attach(function(client, bufnr)
         client.server_capabilities.documentRangeFormattingProvider = false
 
         if use_formatter[client.name] then
-            vim.keymap.set("n", "<leader>F", "<CMD>Format<CR>", bufopts)
+            vim.keymap.set("n", "<leader>F", "<CMD>Format<CR>", opts)
         end
     else
-        vim.keymap.set("n", "<leader>F", ":lua vim.lsp.buf.format({ async = true })<CR>", bufopts)
+        vim.keymap.set("n", "<leader>F", ":lua vim.lsp.buf.format({ async = true })<CR>", opts)
     end
 end)
 
 lsp.setup()
 
-require("luasnip.loaders.from_vscode")
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+require("luasnip.loaders.from_vscode").lazy_load()
