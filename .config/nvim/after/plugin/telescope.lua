@@ -16,22 +16,22 @@ telescope.setup({
     defaults = {
         prompt_prefix = " ",
         selection_caret = " ",
-        file_ignore_patterns = {"^.git[/]", "node_modules", "vendor", ".lock"},
+        file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".lock" },
     },
     pickers = {
-      --   find_command = {
-      --   "fd",
-      --   "--type",
-      --   "f",
-      --   "-H",
-      --   "-E",
-      --   "node_modules",
-      --   "-E",
-      --   ".git",
-      --   "-E",
-      --   ".venv",
-      --   "-I",
-      -- }
+        --   find_command = {
+        --   "fd",
+        --   "--type",
+        --   "f",
+        --   "-H",
+        --   "-E",
+        --   "node_modules",
+        --   "-E",
+        --   ".git",
+        --   "-E",
+        --   ".venv",
+        --   "-I",
+        -- }
     },
     extensions = {
         file_browser = {
@@ -44,6 +44,14 @@ telescope.setup({
                     ["<C-t>"] = actions.select_tab,
                 },
             },
+        },
+        project = {
+            base_dirs = {
+                "~/Workspaces/dpfs/devops/",
+                "~/Workspaces/dpfs/projects/",
+            },
+            theme = "dropdown",
+            hidden_files = true
         },
         fzf = {
             fuzzy = true,
@@ -66,7 +74,10 @@ m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
 m.noremap("<leader>fsg", ":Telescope grep_string<CR>", "silent")
 m.noremap("<leader>pp", ":Telescope project<CR>", "silent")
 m.noremap("<leader>nc", ":Telescope neoclip<CR>", "silent")
-m.noremap("<C-f>", ":Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top word_match='-w'<CR>", "silent")
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
+m.noremap(
+    "<C-f>",
+    ":Telescope current_buffer_fuzzy_find sorting_strategy=ascending prompt_position=top word_match='-w'<CR>",
+    "silent"
+)
+vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
