@@ -38,6 +38,9 @@ formatter.setup({
         markdown = {
             require("formatter.filetypes.markdown").prettier,
         },
+        php = {
+            require("formatter.filetypes.php").php_cs_fixer
+        }
     },
 })
 
