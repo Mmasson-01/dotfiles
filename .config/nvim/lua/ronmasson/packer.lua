@@ -83,6 +83,7 @@ packer.startup(function(use)
     use("tpope/vim-sleuth")
     use("lukas-reineke/indent-blankline.nvim")
     use("ur4ltz/surround.nvim")
+    -- use("kylechui/nvim-surround")
     use("windwp/nvim-autopairs") -- install without yarn or npm
     use("windwp/nvim-ts-autotag")
     use({"folke/todo-comments.nvim"})
@@ -93,5 +94,6 @@ packer.startup(function(use)
         end,
     })
 
+    use('taybart/b64.nvim')
     use("nvim-tree/nvim-tree.lua")
 end)
