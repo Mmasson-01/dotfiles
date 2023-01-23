@@ -7,3 +7,5 @@ if not ok then
 end
 
 todo.setup()
+vim.keymap.set("n", "<leader>tt", "<CMD>TodoTelescope<CR>")
+vim.keymap.set("n", "<leader>tl", "<CMD>TodoLocList<CR>")

@@ -19,19 +19,19 @@ telescope.setup({
         file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".lock" },
     },
     pickers = {
-        --   find_command = {
-        --   "fd",
-        --   "--type",
-        --   "f",
-        --   "-H",
-        --   "-E",
-        --   "node_modules",
-        --   "-E",
-        --   ".git",
-        --   "-E",
-        --   ".venv",
-        --   "-I",
-        -- }
+          find_command = {
+          "fd",
+          "--type",
+          "f",
+          "-H",
+          "-E",
+          "node_modules",
+          "-E",
+          ".git",
+          "-E",
+          ".venv",
+          "-I",
+        }
     },
     extensions = {
         file_browser = {
