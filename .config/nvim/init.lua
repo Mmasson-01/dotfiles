@@ -21,7 +21,7 @@ if ok_m then
     -- -- window navigatio
     m.nnoremap("<C-J>", "<C-w><C-j>")
     m.nnoremap("<C-K>", "<C-w><C-k>")
-    m.nnoremap("<C-H>", "<C-w><C-h>")
+    -- m.nnoremap("<C-H>", "<C-w><C-h>")
     m.nnoremap("<C-L>", "<C-w><C-l>")
 
     -- -- lazygit
