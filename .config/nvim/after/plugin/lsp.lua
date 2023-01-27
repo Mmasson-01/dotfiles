@@ -22,8 +22,7 @@ lsp.ensure_installed({
     "pyright",
     "taplo",
     "sumneko_lua",
-    "bashls",
-    "phpactor"
+    "bashls"
 })
 
 
