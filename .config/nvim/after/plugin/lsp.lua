@@ -43,7 +43,8 @@ local use_formatter = {
     ["tsserver"] = true,
     ["sumneko_lua"] = true,
     ["yamlls"] = true,
-    ["phpactor"] = true
+    ["phpactor"] = true,
+    ["markdown"] = true
 }
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

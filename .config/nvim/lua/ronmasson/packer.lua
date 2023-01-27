@@ -96,4 +96,6 @@ packer.startup(function(use)
 
     use('taybart/b64.nvim')
     use("nvim-tree/nvim-tree.lua")
+    use("christoomey/vim-tmux-navigator")
+    use("chipsenkbeil/distant.nvim")
 end)
