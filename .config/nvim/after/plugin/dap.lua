@@ -1,6 +1,11 @@
 local ok_dap, dap = pcall(require, "dap")
 local ok_dapui, dapui = pcall(require, "dapui")
 local ok_dapvirtual, dapvirtual = pcall(require, "nvim-dap-virtual-text")
+vim.cmd([[
+    augroup daprepl
+    autocmd FileType dap-repl set nobuflisted
+    augroup end
+]])
 -- Debugging
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>" )
 vim.keymap.set("n", "<F10>",":lua require'dap'.step_over()<CR>" )
