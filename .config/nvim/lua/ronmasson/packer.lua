@@ -28,7 +28,8 @@ packer.startup(function(use)
 
     use("b0o/mapx.nvim")
     use({"catppuccin/nvim", as = "catppuccin"})
-    use("kyazdani42/nvim-web-devicons")
+    use("nvim-tree/nvim-web-devicons")
+    -- use("kyazdani42/nvim-web-devicons")
     use("nvim-lualine/lualine.nvim")
     use('theprimeagen/harpoon')
 

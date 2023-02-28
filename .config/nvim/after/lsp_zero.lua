@@ -6,8 +6,6 @@ lsp.ensure_installed({
     "html",
     "cssls",
     "jsonls",
-    "emmet_ls",
-    "eslint",
     "svelte",
     "astro",
     "tsserver",
