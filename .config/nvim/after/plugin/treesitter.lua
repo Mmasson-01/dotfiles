@@ -30,6 +30,7 @@ if ok then
             "tsx",
             "yaml",
             "typescript",
+            "twig"
         },
         ignore_install = { "phpdoc" },
         highlight = { enable = true },

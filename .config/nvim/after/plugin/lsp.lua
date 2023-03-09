@@ -72,7 +72,7 @@ local server_with_disabled_formatting = {
 
 local use_formatter = {
     ["tsserver"] = true,
-    -- ["lua_ls"] = true,
+    ["lua_ls"] = true,
     ["yamlls"] = true,
     ["phpactor"] = true
 }
@@ -117,12 +117,12 @@ local on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
 
-        -- if use_formatter[client.name] then
-        --   vim.keymap.set("n", "<leader>F", null_ls_format, bufopts)
-        -- end
         if use_formatter[client.name] then
-            vim.keymap.set("n", "<leader>F", "<CMD>Format<CR>", bufopts)
+          vim.keymap.set("n", "<leader>F", null_ls_format, bufopts)
         end
+        -- if use_formatter[client.name] then
+        --     vim.keymap.set("n", "<leader>F", "<CMD>Format<CR>", bufopts)
+        -- end
     else
         vim.keymap.set("n", "<leader>F", ":lua vim.lsp.buf.format({ async = true })<CR>", bufopts)
     end

@@ -70,7 +70,6 @@ packer.startup(function(use)
         }
     }
 
-    use("mhartington/formatter.nvim")
     use("mfussenegger/nvim-lint")
 
     use("numToStr/FTerm.nvim")
@@ -100,4 +99,5 @@ packer.startup(function(use)
     use("christoomey/vim-tmux-navigator")
     use("chipsenkbeil/distant.nvim")
     use("j-hui/fidget.nvim")
+    use("jose-elias-alvarez/null-ls.nvim")
 end)
