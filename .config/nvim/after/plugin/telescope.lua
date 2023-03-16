@@ -48,7 +48,6 @@ telescope.setup({
         project = {
             base_dirs = {
                 "~/Workspaces/",
-                "~/Workspaces/",
             },
             theme = "dropdown",
             hidden_files = true

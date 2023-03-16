@@ -72,6 +72,7 @@ local server_with_disabled_formatting = {
 
 local use_formatter = {
     ["tsserver"] = true,
+    ["cssls"] = true,
     ["lua_ls"] = true,
     ["yamlls"] = true,
     ["phpactor"] = true
