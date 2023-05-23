@@ -19,18 +19,20 @@ telescope.setup({
         file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".*[.]lock" },
     },
     pickers = {
-          find_command = {
-          "fd",
-          "--type",
-          "f",
-          "-H",
-          "-E",
-          "node_modules",
-          "-E",
-          ".git",
-          "-E",
-          ".venv",
-          "-I",
+        find_command = {
+            "fd",
+            "--type",
+            "f",
+            "-H",
+            "-E",
+            "node_modules",
+            "-E",
+            "cache",
+            "-E",
+            ".git",
+            "-E",
+            ".venv",
+            "-I",
         }
     },
     extensions = {
@@ -47,7 +49,7 @@ telescope.setup({
         },
         project = {
             base_dirs = {
-                "~/Workspaces/",
+                "~/workspaces/",
             },
             theme = "dropdown",
             hidden_files = true
@@ -65,10 +67,10 @@ telescope.load_extension("file_browser")
 telescope.load_extension("fzf")
 telescope.load_extension("project")
 telescope.load_extension("neoclip")
-
 m.noremap("<leader>fb", ":Telescope file_browser path=%:p:h<CR>", "silent")
 m.noremap("<leader>ff", ":Telescope find_files<CR>", "silent")
-m.noremap("<leader>fg", ":Telescope live_grep<CR>", "silent")
+-- m.noremap("<leader>fg", ":Telescope live_grep<CR>", "silent")
+m.noremap("<leader>fg", "<cmd>lua require('telescope.builtin').live_grep({ additional_args = { '-j1' }})<CR>", "silent")
 m.noremap("<leader>fd", ":Telescope buffers<CR>", "silent")
 m.noremap("<leader>fsg", ":Telescope grep_string<CR>", "silent")
 m.noremap("<leader>pp", ":Telescope project<CR>", "silent")

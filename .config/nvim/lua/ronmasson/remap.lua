@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
 vim.keymap.set("n", "<leader>bf", ":bfirst<CR>")
 vim.keymap.set("n", "<leader>bl", ":blast<CR>")
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
+vim.keymap.set("n", "<leader>bd", ":bp|bd#<CR>")
 
 -- Move between panels
 --use alt+hjkl to move between split/vsplit panels
