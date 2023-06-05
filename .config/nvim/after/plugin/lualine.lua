@@ -13,7 +13,7 @@ lualine.setup({
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
     lualine_c = {'buffers'},
-    lualine_x = {'tabs'},
+    lualine_x = {'tabs', 'tabnine'},
     lualine_y = {'progress'},
     lualine_z = {
       { 'diagnostics',

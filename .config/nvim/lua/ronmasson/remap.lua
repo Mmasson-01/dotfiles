@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>F", function()
-    vim.lsp.buf.format()
+  vim.lsp.buf.format()
 end)
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -49,4 +49,21 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-
+vim.keymap.set("n", "<up>", "<nop>", { silent = true })
+vim.keymap.set("n", "<down>", "<nop>", { silent = true })
+vim.keymap.set("n", "<left>", "<nop>", { silent = true })
+vim.keymap.set("n", "<right>", "<nop>", { silent = true })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { silent = true })
+-- -- tab navigation
+vim.keymap.set("n", "<S-H>", ":tabprev<CR>", { silent = true })
+vim.keymap.set("n", "<S-L>", ":tabnext<CR>", { silent = true })
+vim.keymap.set("n", "<leader>TT", ":tabnew<CR>", { silent = true })
+vim.keymap.set("n", "<leader>TC", ":tabclose<CR>", { silent = true })
+-- -- window navigatio
+vim.keymap.set("n", "<C-J>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-K>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-H>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-L>", "<C-w><C-l>")
+-- -- lazygit
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
