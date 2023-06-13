@@ -16,7 +16,7 @@ if not ready then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
