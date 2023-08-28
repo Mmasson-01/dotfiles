@@ -1,2 +1,0 @@
--- Twig treesitter temp fix
--- vim.cmd([[autocmd BufRead,BufNewFile *.twig set filetype=htmldjango]])
