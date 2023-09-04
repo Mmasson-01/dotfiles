@@ -66,4 +66,4 @@ vim.keymap.set("n", "<C-K>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-H>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-L>", "<C-w><C-l>")
 -- -- lazygit
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
