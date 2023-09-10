@@ -32,8 +32,7 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
-    vim.lsp.handlers["textDocument/hover"] =
-      vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
     local auto_install_servers = {
       "html",
@@ -138,12 +137,16 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
       vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, bufopts)
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-      vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
-      vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
-      vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
-      vim.keymap.set("n", "<leader>dl", ":Telescope diagnostics<CR>", bufopts)
-      vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+      vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, bufopts)
+      vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, bufopts)
+      vim.keymap.set("n", "[d", vim.diagnostic.goto_next, bufopts)
+      vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, bufopts)
+      vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, bufopts)
+      vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, bufopts)
+      vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
 
       if server_with_disabled_formatting[client.name] then
         client.server_capabilities.documentFormattingProvider = false
