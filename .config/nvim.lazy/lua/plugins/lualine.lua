@@ -15,7 +15,7 @@ return {
       lualine_a = { "mode" },
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = { { "%f", color = { gui = "bold" } } },
-      lualine_x = {},
+      lualine_x = { "tabnine" },
       lualine_y = {},
       lualine_z = { "fileformat", "filetype" },
     },
