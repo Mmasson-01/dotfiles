@@ -56,6 +56,7 @@ return {
 
     local servers = {
       "svelte",
+      "bashls",
       "tsserver",
       "yamlls",
       "pyright",
