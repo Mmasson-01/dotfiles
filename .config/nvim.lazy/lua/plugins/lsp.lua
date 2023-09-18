@@ -13,6 +13,7 @@ return {
     local mason = require("mason")
     local mason_lsp = require("mason-lspconfig")
     local lsp = require("lspconfig")
+    local util = require("lspconfig/util")
 
     -- Language specific
     local rust_tools = require("rust-tools")
@@ -34,25 +35,25 @@ return {
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-    local auto_install_servers = {
-      "html",
-      "cssls",
-      "svelte",
-      "tsserver",
-      "yamlls",
-      "pyright",
-      "jsonls",
-      "lua_ls",
-      "dockerls",
-      "tailwindcss",
-      "taplo",
-      "astro",
-      "gopls",
-      "bashls",
-      "terraformls",
-      "tflint",
-      "ansiblels",
-    }
+    -- local auto_install_servers = {
+    --   "html",
+    --   "cssls",
+    --   "svelte",
+    --   "tsserver",
+    --   "yamlls",
+    --   "pyright",
+    --   "jsonls",
+    --   "lua_ls",
+    --   "dockerls",
+    --   "tailwindcss",
+    --   "taplo",
+    --   "astro",
+    --   "gopls",
+    --   "bashls",
+    --   "terraformls",
+    --   "tflint",
+    --   "ansiblels",
+    -- }
 
     local servers = {
       "svelte",
@@ -108,12 +109,14 @@ return {
       ["lua_ls"] = true,
       ["tailwindcss"] = true,
       ["cssls"] = true,
+      ["jsonls"] = true,
     }
 
     local use_formatter = {
       ["tsserver"] = true,
       ["lua_ls"] = true,
       ["cssls"] = true,
+      ["jsonls"] = true,
     }
 
     local null_ls_format = function(bufnr)
@@ -127,7 +130,7 @@ return {
     end
 
     mason.setup()
-    mason_lsp.setup({ ensure_installed = auto_install_servers })
+    mason_lsp.setup({ ensure_installed = servers })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = cmp_lsp.default_capabilities(capabilities)

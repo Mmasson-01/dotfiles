@@ -3,6 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local null_ls = require("null-ls")
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
     local check_eslint_config = function(utils)
       return utils.root_has_file({ ".eslintrc", ".eslintrc.js" })
@@ -31,6 +32,7 @@ return {
     local sources = {
       null_ls.builtins.formatting.prettier.with({
         condition = check_prettier_config,
+        extra_filetypes = { "json", "yml", "yaml" },
       }),
       null_ls.builtins.formatting.eslint.with({
         condition = check_eslint_config,
@@ -50,6 +52,6 @@ return {
       null_ls.builtins.formatting.golines,
     }
 
-    null_ls.setup({ sources = sources, debug = true, on_attach = on_attach})
+    null_ls.setup({ sources = sources, debug = true, on_attach = on_attach })
   end,
 }

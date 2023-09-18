@@ -1,8 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  -- dependencies = {
-  --   "JoosepAlviste/nvim-ts-context-commentstring",
-  -- },
+  dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
   config = function()
     local ts = require("nvim-treesitter.configs")
 
@@ -37,9 +37,9 @@ return {
         "yaml",
         "typescript",
       },
-      -- context_commentstring = {
-      --   enable = true
-      -- },
+      context_commentstring = {
+        enable = true,
+      },
       ignore_install = { "phpdoc" },
       highlight = { enable = true },
       indent = { enable = true },

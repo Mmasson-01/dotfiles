@@ -32,9 +32,11 @@ return {
     local fb_actions = telescope.extensions.file_browser.actions
 
     telescope.setup({
+      defaults = {
+        file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".*[.]lock", "\\.terragrunt-cache" },
+      },
       pickers = {
         find_files = {
-          previewer = false,
           find_command = {
             "fd",
             "--type",
