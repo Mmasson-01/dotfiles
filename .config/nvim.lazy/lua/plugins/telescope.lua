@@ -33,7 +33,7 @@ return {
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".*[.]lock", "\\.terragrunt-cache" },
+        file_ignore_patterns = { "^.git[/]", "node_modules", "vendor", ".*[.]lock", ".terragrunt-cache" },
       },
       pickers = {
         find_files = {
@@ -48,6 +48,8 @@ return {
             "cache",
             "-E",
             ".git",
+            "-E",
+            ".terragrunt-cache",
             "-E",
             ".env*",
             "-E",
