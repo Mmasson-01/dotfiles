@@ -74,6 +74,7 @@ return {
       "terraformls",
       "tflint",
       "ansiblels",
+      "eslint",
     }
 
     local server_settings = {
