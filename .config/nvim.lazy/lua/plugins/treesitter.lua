@@ -5,6 +5,7 @@ return {
   },
   config = function()
     local ts = require("nvim-treesitter.configs")
+    local ts_context_commentstring = require("ts_context_commentstring")
 
     ts.setup({
       enable = true,
@@ -37,13 +38,11 @@ return {
         "yaml",
         "typescript",
       },
-      context_commentstring = {
-        enable = true,
-      },
       ignore_install = { "phpdoc" },
       highlight = { enable = true },
       indent = { enable = true },
       autotag = { enable = true },
     })
+    ts_context_commentstring.setup({})
   end,
 }

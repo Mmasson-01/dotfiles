@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { ".skhdrc" },
-  command = "!brew services restart skhd",
+  command = "!skhdrc --restart-service",
 })
 local function augroup(name)
   return vim.api.nvim_create_augroup("custom_au_" .. name, { clear = true })

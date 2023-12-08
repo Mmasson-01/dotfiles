@@ -1,3 +1,3 @@
 return {
-  { "codota/tabnine-nvim", build = "./dl_binaries.sh" },
+  -- { "codota/tabnine-nvim", build = "./dl_binaries.sh" },
 }
