@@ -85,3 +85,6 @@ end)
 vim.keymap.set("n", "gR", function()
   require("trouble").toggle("lsp_references")
 end)
+
+-- TODO
+vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { silent = true })
