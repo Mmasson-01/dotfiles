@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { ".skhdrc" },
-  command = "!brew services restart skhd",
+  command = "!skhdrc --restart-service",
 })
 local function augroup(name)
   return vim.api.nvim_create_augroup("custom_au_" .. name, { clear = true })
@@ -42,7 +42,5 @@ vim.g.terraform_fmt_on_save = 1
 vim.g.terraform_align = 1
 
 -- ansible-vim
-vim.cmd(
-  [[au BufRead *.yaml,*.yml if search('hosts:\|tasks:\|roles:', 'nw') | set ft=yaml.ansible | endif]]
-)
+vim.cmd([[au BufRead *.yaml,*.yml if search('hosts:\|tasks:\|roles:', 'nw') | set ft=yaml.ansible | endif]])
 vim.cmd([[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]])
