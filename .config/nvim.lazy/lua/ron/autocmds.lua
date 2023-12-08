@@ -42,7 +42,12 @@ vim.g.terraform_fmt_on_save = 1
 vim.g.terraform_align = 1
 
 -- ansible-vim
-vim.cmd(
-  [[au BufRead *.yaml,*.yml if search('hosts:\|tasks:\|roles:', 'nw') | set ft=yaml.ansible | endif]]
-)
+vim.cmd([[au BufRead *.yaml,*.yml if search('hosts:\|tasks:\|roles:', 'nw') | set ft=yaml.ansible | endif]])
 vim.cmd([[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]])
+
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = augroup("resize_splits"),
+  callback = function()
+    vim.cmd("tabdo wincmd =")
+  end,
+})
