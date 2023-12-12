@@ -60,11 +60,21 @@ vim.keymap.set("n", "<S-H>", ":tabprev<CR>", { silent = true })
 vim.keymap.set("n", "<S-L>", ":tabnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>TT", ":tabnew<CR>", { silent = true })
 vim.keymap.set("n", "<leader>TC", ":tabclose<CR>", { silent = true })
+vim.keymap.set("n", "<S-<", "<cmd>-tabmove<cr>", { desc = "Move tab to left", silent = true, noremap = true })
+vim.keymap.set("n", "<S->", "<cmd>+tabmove<cr>", { desc = "Move tab to right", silent = true })
 -- -- window navigatio
 vim.keymap.set("n", "<C-J>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-K>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-H>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-L>", "<C-w><C-l>")
+
+-- Resize window
+vim.keymap.set("n", "<S-Up>", "<CMD>resize +2<CR>", { desc = "Increase window height", silent = true })
+vim.keymap.set("n", "<S-Down>", "<CMD>resize -2<CR>", { desc = "Decrease window height", silent = true })
+vim.keymap.set("n", "<S-Left>", "<CMD>vertical resize -2<CR>", { desc = "Decrease window width", silent = true })
+vim.keymap.set("n", "<S-Right>", "<CMD>vertical resize +2<CR>", { desc = "Increase window width", silent = true })
+
+vim.keymap.set("n", "<leader>cf", "<CMD>let @+=expand('%:.')<CR>", { desc = "Copy relative file name", silent = true })
 
 -- Trouble
 vim.keymap.set("n", "<leader>xx", function()
