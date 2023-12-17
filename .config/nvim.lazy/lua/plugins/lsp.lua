@@ -70,6 +70,7 @@ return {
       "taplo",
       "astro",
       "gopls",
+      "templ",
       "rust_analyzer",
       "terraformls",
       "tflint",

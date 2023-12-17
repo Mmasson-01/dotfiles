@@ -19,6 +19,7 @@ return {
         "dockerfile",
         "graphql",
         "go",
+        "templ",
         "html",
         "javascript",
         "jsdoc",
