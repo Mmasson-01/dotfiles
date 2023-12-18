@@ -178,5 +178,15 @@ return {
         })
       end
     end
+    require("lspconfig").tailwindcss.setup({
+      filetypes = {
+        "templ",
+      },
+      init_options = {
+        userLanguages = {
+          templ = "html",
+        },
+      },
+    })
   end,
 }

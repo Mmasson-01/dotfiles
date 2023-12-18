@@ -45,6 +45,25 @@ vim.g.terraform_align = 1
 vim.cmd([[au BufRead *.yaml,*.yml if search('hosts:\|tasks:\|roles:', 'nw') | set ft=yaml.ansible | endif]])
 vim.cmd([[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]])
 
+-- GO TEMPL PLUGIN https://templ.guide/commands-and-tools/ide-support/
+vim.filetype.add({
+  extension = {
+    templ = "templ",
+  },
+})
+-- Format current buffer using LSP.
+vim.api.nvim_create_autocmd({
+  -- 'BufWritePre' event triggers just before a buffer is written to file.
+  "BufWritePre",
+}, {
+  pattern = { "*.templ" },
+  callback = function()
+    -- Format the current buffer using Neovim's built-in LSP (Language Server Protocol).
+    vim.lsp.buf.format()
+  end,
+})
+
+-- CUSTOM AUTOCOMMAND
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
   callback = function()
