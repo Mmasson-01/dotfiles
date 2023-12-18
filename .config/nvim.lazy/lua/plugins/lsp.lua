@@ -75,6 +75,7 @@ return {
       "tflint",
       "ansiblels",
       "eslint",
+      "phpactor",
     }
 
     local server_settings = {
