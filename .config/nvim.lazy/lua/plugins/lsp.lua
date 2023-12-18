@@ -35,28 +35,7 @@ return {
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-    -- local auto_install_servers = {
-    --   "html",
-    --   "cssls",
-    --   "svelte",
-    --   "tsserver",
-    --   "yamlls",
-    --   "pyright",
-    --   "jsonls",
-    --   "lua_ls",
-    --   "dockerls",
-    --   "tailwindcss",
-    --   "taplo",
-    --   "astro",
-    --   "gopls",
-    --   "bashls",
-    --   "terraformls",
-    --   "tflint",
-    --   "ansiblels",
-    -- }
-
     local servers = {
-      "svelte",
       "bashls",
       "tsserver",
       "yamlls",
@@ -66,12 +45,9 @@ return {
       "cssls",
       "lua_ls",
       "dockerls",
-      "tailwindcss",
       "taplo",
-      "astro",
       "gopls",
       "templ",
-      "rust_analyzer",
       "terraformls",
       "tflint",
       "ansiblels",
@@ -110,7 +86,6 @@ return {
     local server_with_disabled_formatting = {
       ["tsserver"] = true,
       ["lua_ls"] = true,
-      ["tailwindcss"] = true,
       ["cssls"] = true,
       ["jsonls"] = true,
     }
