@@ -2,9 +2,9 @@
 vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<leader>F", function()
-  vim.lsp.buf.format()
-end)
+-- vim.keymap.set("n", "<leader>F", function()
+--   vim.lsp.buf.format()
+-- end)
 
 vim.keymap.set("n", "J", "mzJ`z")
 
