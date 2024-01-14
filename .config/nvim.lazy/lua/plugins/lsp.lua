@@ -5,30 +5,19 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "simrat39/rust-tools.nvim", -- Rust Custom LSP
-        "hrsh7th/cmp-nvim-lsp", -- LSP completion
+        "hrsh7th/cmp-nvim-lsp",     -- LSP completion
+        "j-hui/fidget.nvim",
     },
 
     config = function()
         -- Base
+        require("fidget").setup({})
         local mason = require("mason")
         local mason_lsp = require("mason-lspconfig")
         local lsp = require("lspconfig")
 
-        -- Language specific
-        local rust_tools = require("rust-tools")
-
         -- Tools
         local cmp_lsp = require("cmp_nvim_lsp")
-        -- require("lspconfig").tailwindcss.setup({
-        --     filetypes = {
-        --         "templ",
-        --     },
-        --     init_options = {
-        --         userLanguages = {
-        --             templ = "html",
-        --         },
-        --     },
-        -- })
 
         local signs = {
             Error = " ",
@@ -50,7 +39,6 @@ return {
             "bashls",
             "tsserver",
             "yamlls",
-            "pyright",
             "jsonls",
             "html",
             "cssls",
@@ -61,6 +49,7 @@ return {
             "astro",
             "gopls",
             "templ",
+            -- "htmx-lsp", -- required cargo
             -- "rust_analyzer",
             "terraformls",
             "tflint",
@@ -105,31 +94,6 @@ return {
             },
         }
 
-        local server_with_disabled_formatting = {
-            ["tsserver"] = true,
-            ["lua_ls"] = true,
-            ["tailwindcss"] = true,
-            ["cssls"] = true,
-            ["jsonls"] = true,
-        }
-
-        local use_formatter = {
-            ["tsserver"] = true,
-            ["lua_ls"] = true,
-            ["cssls"] = true,
-            ["jsonls"] = true,
-        }
-
-        local null_ls_format = function(bufnr)
-            vim.lsp.buf.format({
-                async = true,
-                filter = function(client)
-                    return client.name == "null-ls"
-                end,
-            })
-            bufnr = bufnr
-        end
-
         mason.setup()
         mason_lsp.setup({ ensure_installed = servers })
 
@@ -147,35 +111,36 @@ return {
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
             vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, bufopts)
             vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, bufopts)
-            vim.keymap.set("n", "[d", vim.diagnostic.goto_next, bufopts)
-            vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, bufopts)
+            -- replace by trouble
+            -- vim.keymap.set("n", "[d", vim.diagnostic.goto_next, bufopts)
+            -- vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, bufopts)
             vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, bufopts)
             vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, bufopts)
             vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, bufopts)
             vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, bufopts)
-
-            -- if server_with_disabled_formatting[client.name] then
-            --   client.server_capabilities.documentFormattingProvider = false
-            --   client.server_capabilities.documentRangeFormattingProvider = false
-            --
-            --   if use_formatter[client.name] then
-            --     vim.keymap.set("n", "<leader>F", null_ls_format, bufopts)
-            --   end
-            -- else
-            --   vim.keymap.set("n", "<leader>F", ":lua vim.lsp.buf.format({ async = true })<CR>", bufopts)
-            -- end
         end
 
         for _, server in pairs(servers) do
-            if server == "rust_analyzer" then
-                rust_tools.setup({ tools = { on_initialized = on_attach } })
-            else
-                lsp[server].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = server_settings[server],
-                })
-            end
+            lsp[server].setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = server_settings[server],
+            })
         end
+
+        vim.diagnostic.config({
+            virtual_text = true,
+        })
+
+        require("lspconfig").tailwindcss.setup({
+            filetypes = {
+                "templ",
+            },
+            init_options = {
+                userLanguages = {
+                    templ = "html",
+                },
+            },
+        })
     end,
 }

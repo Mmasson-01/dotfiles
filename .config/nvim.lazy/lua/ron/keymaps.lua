@@ -62,7 +62,12 @@ vim.keymap.set("n", "<S-H>", ":tabprev<CR>", { silent = true })
 vim.keymap.set("n", "<S-L>", ":tabnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>TT", ":tabnew<CR>", { silent = true })
 vim.keymap.set("n", "<leader>TC", ":tabclose<CR>", { silent = true })
-vim.keymap.set("n", "<S-<", "<cmd>-tabmove<cr>", { desc = "Move tab to left", silent = true, noremap = true })
+vim.keymap.set(
+    "n",
+    "<S-<",
+    "<cmd>-tabmove<cr>",
+    { desc = "Move tab to left", silent = true, noremap = true }
+)
 vim.keymap.set("n", "<S->", "<cmd>+tabmove<cr>", { desc = "Move tab to right", silent = true })
 -- -- window navigatio
 vim.keymap.set("n", "<C-J>", "<C-w><C-j>")
@@ -71,36 +76,57 @@ vim.keymap.set("n", "<C-H>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-L>", "<C-w><C-l>")
 
 -- Resize window
-vim.keymap.set("n", "<S-Up>", "<CMD>resize +2<CR>", { desc = "Increase window height", silent = true })
-vim.keymap.set("n", "<S-Down>", "<CMD>resize -2<CR>", { desc = "Decrease window height", silent = true })
-vim.keymap.set("n", "<S-Left>", "<CMD>vertical resize -2<CR>", { desc = "Decrease window width", silent = true })
-vim.keymap.set("n", "<S-Right>", "<CMD>vertical resize +2<CR>", { desc = "Increase window width", silent = true })
+vim.keymap.set(
+    "n",
+    "<S-Up>",
+    "<CMD>resize +2<CR>",
+    { desc = "Increase window height", silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<S-Down>",
+    "<CMD>resize -2<CR>",
+    { desc = "Decrease window height", silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<S-Left>",
+    "<CMD>vertical resize -2<CR>",
+    { desc = "Decrease window width", silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<S-Right>",
+    "<CMD>vertical resize +2<CR>",
+    { desc = "Increase window width", silent = true }
+)
 
-vim.keymap.set("n", "<leader>cf", "<CMD>let @+=expand('%:.')<CR>", { desc = "Copy relative file name", silent = true })
+vim.keymap.set(
+    "n",
+    "<leader>cf",
+    "<CMD>let @+=expand('%:.')<CR>",
+    { desc = "Copy relative file name", silent = true }
+)
 
 -- Trouble
 vim.keymap.set("n", "<leader>xx", function()
-  require("trouble").toggle()
+    require("trouble").toggle()
 end)
 vim.keymap.set("n", "<leader>xw", function()
-  require("trouble").toggle("workspace_diagnostics")
+    require("trouble").toggle("workspace_diagnostics")
 end)
 vim.keymap.set("n", "<leader>xd", function()
-  require("trouble").toggle("document_diagnostics")
+    require("trouble").toggle("document_diagnostics")
 end)
 vim.keymap.set("n", "<leader>xq", function()
-  require("trouble").toggle("quickfix")
+    require("trouble").toggle("quickfix")
 end)
 vim.keymap.set("n", "<leader>xl", function()
-  require("trouble").toggle("loclist")
+    require("trouble").toggle("loclist")
 end)
 vim.keymap.set("n", "gR", function()
-  require("trouble").toggle("lsp_references")
+    require("trouble").toggle("lsp_references")
 end)
 
 -- TODO
 vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { silent = true })
-
--- diff
-vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>", { silent = true })
-vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", { silent = true })

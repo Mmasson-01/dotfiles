@@ -4,11 +4,18 @@ return {
     config = function()
         local null_ls = require("null-ls")
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+        local check_eslint_config = function(utils)
+            return utils.root_has_file({ ".eslintrc", ".eslintrc.js" })
+        end
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.prettierd,
-                null_ls.builtins.diagnostics.eslint_d,
+                null_ls.builtins.formatting.prettierd.with({
+                    filetypes = { "astro" },
+                }),
+                null_ls.builtins.diagnostics.eslint_d.with({
+                    condition = check_eslint_config,
+                }),
                 null_ls.builtins.formatting.gofumpt,
                 null_ls.builtins.formatting.goimports_reviser,
                 null_ls.builtins.formatting.golines,
