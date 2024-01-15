@@ -86,6 +86,7 @@ return {
             },
             ["gopls"] = {
                 gopls = {
+                    gofumpt = true,
                     completeUnimported = true,
                     usePlaceholders = true,
                     analyses = {

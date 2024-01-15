@@ -10,6 +10,8 @@ return {
         "hrsh7th/nvim-cmp", -- Completion engine
         dependencies = {
             "hrsh7th/cmp-nvim-lsp", -- LSP completion
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
         },
         config = function()
             -- Set up nvim-cmp.
