@@ -8,6 +8,8 @@ return {
     },
     config = function()
         -- TODO
+
+        require("todo-comments").setup({})
         vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { silent = true })
     end,
 }

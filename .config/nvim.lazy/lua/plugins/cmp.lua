@@ -13,6 +13,11 @@ return {
             "hrsh7th/cmp-path", -- LSP completion
             "hrsh7th/cmp-buffer", -- LSP completion
         },
+        enabled = function()
+            local disabled = false
+            disabled = disabled or (vim.api.nvim_buf_get_option(0, "buftype") == "prompt")
+            return not disabled
+        end,
         config = function()
             local cmp = require("cmp")
             local cmp_select = { behavior = cmp.SelectBehavior.Select }
