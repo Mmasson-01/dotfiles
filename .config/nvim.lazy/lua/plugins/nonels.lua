@@ -10,8 +10,8 @@ return {
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.prettierd.with({
-                    filetypes = { "astro" },
+                null_ls.builtins.formatting.prettier.with({
+                    filetypes = { "astro", "markdown" },
                 }),
                 null_ls.builtins.diagnostics.eslint_d.with({
                     condition = check_eslint_config,
