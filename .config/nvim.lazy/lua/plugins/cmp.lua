@@ -12,6 +12,7 @@ return {
             "hrsh7th/cmp-nvim-lsp", -- LSP completion
             "hrsh7th/cmp-path", -- LSP completion
             "hrsh7th/cmp-buffer", -- LSP completion
+            "onsails/lspkind.nvim",
         },
         enabled = function()
             local disabled = false
@@ -72,10 +73,19 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" }, -- For luasnip users.
+                    { name = "codeium" },
                 }, {
                     { name = "path" },
                     { name = "buffer" },
                 }),
+                -- formatting = {
+                --     format = require("lspkind").cmp_format({
+                --         mode = "symbol",
+                --         maxwidth = 50,
+                --         ellipsis_char = "...",
+                --         symbol_map = { Codeium = "" },
+                --     }),
+                -- },
             })
         end,
     },

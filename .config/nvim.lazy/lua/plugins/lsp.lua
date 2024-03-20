@@ -5,7 +5,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "simrat39/rust-tools.nvim", -- Rust Custom LSP
-        "hrsh7th/cmp-nvim-lsp",     -- LSP completion
+        "hrsh7th/cmp-nvim-lsp", -- LSP completion
         "j-hui/fidget.nvim",
     },
 
