@@ -1,0 +1,18 @@
+pacakges:
+  darwin:
+    brews:
+      - "git"
+      - "htop"
+      - "fd"
+      - "ripgrep"
+      - "jq"
+      - "lolcat"
+      - "go"
+      - "lazygit"
+      - "kitty"
+      - "spotify"
+      - "discord"
+      - "neovim"
+      - "shellcheck"
+      - "tmux"
+      - "caarlos0/tap/timer"
