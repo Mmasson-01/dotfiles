@@ -1,4 +1,4 @@
-pacakges:
+packages:
   darwin:
     brews:
       - "git"
@@ -9,9 +9,6 @@ pacakges:
       - "lolcat"
       - "go"
       - "lazygit"
-      - "kitty"
-      - "spotify"
-      - "discord"
       - "neovim"
       - "shellcheck"
       - "tmux"
@@ -19,5 +16,9 @@ pacakges:
       - "tfenv"
       - "warrensbox/tap/tgswitch"
       - "gh"
-      - "derailed/k9s/k9s"
+      - "k9s"
       - "gsed"
+    casks:
+      - "spotify"
+      - "discord"
+      - "kitty"
