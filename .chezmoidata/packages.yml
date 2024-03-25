@@ -16,3 +16,5 @@ pacakges:
       - "shellcheck"
       - "tmux"
       - "caarlos0/tap/timer"
+      - "tfenv"
+      - "warrensbox/tap/tgswitch"
