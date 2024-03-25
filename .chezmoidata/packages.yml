@@ -20,3 +20,4 @@ pacakges:
       - "warrensbox/tap/tgswitch"
       - "gh"
       - "derailed/k9s/k9s"
+      - "gsed"
