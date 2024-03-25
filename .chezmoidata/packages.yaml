@@ -18,6 +18,7 @@ packages:
       - "gh"
       - "k9s"
       - "gsed"
+      - "kubectx"
     casks:
       - "spotify"
       - "discord"
